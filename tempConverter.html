@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <meta charset="utf-8"/>
+        
+        <!-- Title of the window page -->
+        <title> Temperature Converter </title>
+        
+    </head>
+    
+    
+    <body>
+        
+        <!-- Title of the page -->
+        <h1><center><font color="pink"> Assignement 1 : Temperature Converter ! </font></center></h1>
+        <br><br><br><br>
+        
+        <!-- First input line : C to F -->
+        <p><center>
+            <label><font color="deepskyblue"> Celsius :</font></label>
+            <input id="celsius" type="number" placeholder="type the temperature in °C" style="width: 200px;" oninput="CtoF(this.value)" onchange="CtoF(this.value)">  
+            <span id="F" style="color:deepskyblue"> to Fahrenheit :</span>
+            <span id="resultF"> </span>
+        </center></p>
+        
+        
+        <!-- Second input line : F to C -->
+        <p><center>
+            <label><font color="orange"> Fahrenheit :</font></label>
+            <input id="fahrenheit" type="number" placeholder="type the temperature in °F" style="width: 200px;" oninput="FtoC(this.value)" onchange="FtoC(this.value)">
+            <span id="C" style="color:orange"> to Celsius :</span>
+            <span id="resultC"> </span>
+        </center></p>
+
+
+        <script>
+
+            // Function that converts Celsius to Fahrenheit and colors the result based on the coloring rules
+            function CtoF (temp){
+                temp = parseFloat(temp);
+                var temp2 = document.getElementById("resultF").innerHTML = (temp*1.8)+32;
+                if(temp2<39.2){
+                    document.getElementById("resultF").style.color="blue";
+                }
+                else if(temp2>=39.2 && temp2<=80.6){
+                    document.getElementById("resultF").style.color="black";
+                }
+                else{
+                    document.getElementById("resultF").style.color="red";
+                }
+            }
+            
+            // Function that converts Fahrenheit to Celsius and colors the result based on the coloring rules
+            function FtoC (temp){
+                temp = parseFloat(temp);
+                var temp2 = document.getElementById("resultC").innerHTML = (temp-32)/1.8;
+                if(temp2<4){
+                    document.getElementById("resultC").style.color="blue";
+                }
+                else if(temp2>=4 && temp2<=27){
+                    document.getElementById("resultC").style.color="black";
+                }
+                else{
+                    document.getElementById("resultC").style.color="red";
+                }
+            }
+
+
+        </script>
+
+    </body>
+    <br><br><br><br>
+    
+    <!-- Page signature -->
+    <footer>
+        
+        <b><center><font color="pink"> By Lina Abu Hijleh </font></center></b>
+    
+    </footer>
+
+</html>
